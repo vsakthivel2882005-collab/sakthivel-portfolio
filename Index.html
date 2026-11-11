@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sakthivel V | Premium Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold:#e8b936;
+  --black:#050505;
+  --white:#fff;
+  --gray:#bdbdbd;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ background:var(--black);
+ color:var(--white);
+ font-family:Poppins,sans-serif;
+ overflow-x:hidden;
+}
+header{
+ position:fixed;top:0;width:100%;
+ padding:22px 7%;
+ display:flex;justify-content:space-between;
+ align-items:center;z-index:100;
+ background:#050505eF;
+ border-bottom:1px solid #29200c;
+}
+.logo{font-size:30px;font-weight:700;color:var(--gold)}
+nav{display:flex;gap:35px}
+nav a{
+ text-decoration:none;color:white;
+ font-size:13px;font-weight:600;
+ transition:.3s;
+}
+nav a:hover{color:var(--gold)}
+.theme{
+ border:1px solid var(--gold);
+ color:var(--gold);background:transparent;
+ padding:10px 15px;border-radius:30px;
+ cursor:pointer;
+}
+.menu{display:none}
+.hero{
+ min-height:100vh;
+ display:grid;
+ grid-template-columns:1.1fr 1fr;
+ align-items:center;
+ padding:110px 7% 50px;
+ position:relative;
+ background:radial-gradient(ellipse at 75% 45%,#242424,#050505 60%);
+}
+.hero:before{
+ content:"";position:absolute;
+ width:180px;height:180px;
+ top:0;left:0;
+ background:linear-gradient(135deg,#ffdf70,#9b6a0d,transparent);
+ clip-path:polygon(0 0,100% 0,0 100%);
+ opacity:.9;
+}
+.intro{z-index:2}
+.welcome{
+ color:var(--gold);letter-spacing:5px;
+ font-size:15px;font-weight:600;
+}
+h1{
+ font-family:"Playfair Display",serif;
+ font-size:clamp(65px,9vw,130px);
+ line-height:.95;margin:30px 0 15px;
+}
+h1 span{display:block;color:var(--gold)}
+.role{font-size:clamp(20px,3vw,35px);color:var(--gold)}
+.line{
+ width:90%;height:2px;
+ background:linear-gradient(90deg,var(--gold),transparent);
+ margin:25px 0;
+}
+.motto{letter-spacing:5px;color:#ccc}
+.buttons{display:flex;gap:15px;flex-wrap:wrap;margin-top:30px}
+.btn{
+ display:inline-block;padding:15px 25px;
+ border:1px solid var(--gold);
+ border-radius:40px;text-decoration:none;
+ color:var(--gold);transition:.3s;
+}
+.btn.primary{background:var(--gold);color:#000}
+.btn:hover{transform:translateY(-4px);box-shadow:0 5px 20px #e8b93655}
+.socials{display:flex;gap:18px;margin-top:30px}
+.socials a{
+ width:45px;height:45px;border:1px solid var(--gold);
+ border-radius:50%;display:grid;place-items:center;
+ color:var(--gold);text-decoration:none;font-weight:bold;
+}
+.socials a:hover{background:var(--gold);color:#000}
+.photo-area{
+ height:650px;position:relative;
+ display:flex;justify-content:center;align-items:end;
+}
+.photo{
+ width:100%;height:100%;
+ object-fit:contain;object-position:center bottom;
+ filter:grayscale(100%) contrast(1.1);
+}
+.details{
+ position:absolute;right:-20px;top:30%;
+ border-left:2px solid var(--gold);
+ padding-left:20px;line-height:1.8;
+}
+.details strong{color:var(--gold);display:block}
+.scroll{
+ position:absolute;bottom:20px;left:45%;
+ color:var(--gold);letter-spacing:4px;
+ font-size:12px;text-align:center;
+}
+section.content{padding:100px 8%;border-top:1px solid #28200e}
+h2{
+ font:600 45px "Playfair Display",serif;
+ margin-bottom:25px;
+}
+.gold{color:var(--gold)}
+p{color:var(--gray);line-height:1.9}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+ gap:20px;margin-top:30px;
+}
+.card{
+ padding:30px;background:#111;
+ border:1px solid #554319;border-radius:12px;
+ transition:.3s;
+}
+.card:hover{transform:translateY(-7px);border-color:var(--gold)}
+.card h3{color:var(--gold);margin-bottom:15px}
+.skills{display:flex;gap:12px;flex-wrap:wrap}
+.skills span{
+ border:1px solid var(--gold);color:var(--gold);
+ padding:12px 20px;border-radius:30px;
+}
+footer{
+ text-align:center;padding:30px;
+ border-top:1px solid #554319;color:var(--gold);
+}
+body.light{background:#f5f1e8;color:#111}
+body.light header{background:#f5f1e8}
+body.light nav a{color:#111}
+body.light .card{background:#fff}
+body.light p{color:#444}
+@media(max-width:850px){
+ header{padding:15px 5%}
+ nav{gap:12px}
+ nav a{font-size:10px}
+ .hero{padding:120px 6% 60px}
+ .photo-area{height:450px}
+ .details{right:0;font-size:12px}
+}
+@media(max-width:600px){
+ .menu{display:block;background:transparent;color:var(--gold);
+ border:1px solid var(--gold);padding:8px}
+ nav{
+ display:none;position:absolute;top:70px;left:0;
+ width:100%;background:#111;padding:25px;
+ flex-direction:column;
+ }
+ nav.open{display:flex}
+ .hero{grid-template-columns:1fr;padding-top:120px}
+ .intro{text-align:left}
+ h1{font-size:75px}
+ .photo-area{height:420px;margin-top:20px}
+ .details{right:0;top:20%;font-size:11px}
+ .scroll{left:35%}
+ section.content{padding:70px 6%}
+ h2{font-size:35px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="logo">SV.</div>
+ <button class="menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+ <nav>
+  <a href="#home">HOME</a>
+  <a href="#about">ABOUT</a>
+  <a href="#skills">SKILLS</a>
+  <a href="#projects">PROJECTS</a>
+  <a href="#experience">EXPERIENCE</a>
+  <a href="#contact">CONTACT</a>
+ </nav>
+ <button class="theme" onclick="document.body.classList.toggle('light')">☀ / ☾</button>
+</header>
+
+<main>
+<section class="hero" id="home">
+
+ <div class="intro">
+  <div class="welcome">WELCOME TO MY PORTFOLIO</div>
+
+  <h1>Sakthivel<span>V.</span></h1>
+
+  <div class="role">Developer / CSE Student</div>
+
+  <div class="line"></div>
+
+  <div class="motto">Dream • Code • Create • Grow</div>
+
+  <div class="buttons">
+   <a class="btn primary" href="resume.pdf" download>⬇ Download Resume</a>
+   <a class="btn" href="#contact">✉ Contact Me</a>
+  </div>
+
+  <div class="socials">
+   <a href="https://instagram.com/cdm_killer_sakthi_07">◎</a>
+   <a href="https://linkedin.com">in</a>
+   <a href="https://github.com/vsakthivel2882005-collab">GH</a>
+   <a href="https://wa.me/919360411193">W</a>
+   <a href="https://youtube.com/@tn.9144">▶</a>
+  </div>
+ </div>
+
+ <div class="photo-area">
+  <img src="profile.jpg" class="photo" alt="Sakthivel Portrait">
+  <div class="details">
+   <strong>B.E. CSE</strong>
+   2023 – 2027
+   <br><br>
+   <strong>Supervisor</strong>
+   Future India<br>Private Limited
+   <br><br>
+   <strong>Project</strong>
+   Employee<br>Management<br>System
+  </div>
+ </div>
+
+ <div class="scyyroll">SCROLL TO EXPLORE<br>↓</div>
+</section>
+
+<section class="content" id="about">
+ <h2>About <span class="gold">Me</span></h2>
+ <p>
+ I am Sakthivel V., a Computer Science and Engineering student
+ at JKKN College of Engineering and Technology (2023–2027).
+ I am interested in web development, technology and creating
+ practical digital solutions.
+ </p>
+</section>
+
+<section class="content" id="skills">
+ <h2>My <span class="gold">Skills</span></h2>
+ <div class="skills">
+  <span>HTML</span>
+  <span>CSS</span>
+  <span>JavaScript</span>
+  <span>MS Office</span>
+  <span>Data Entry</span>
+  <span>Communication</span>
+  <span>Recruitment Coordination</span>
+ </div>
+</section>
+
+<section class="content" id="projects">
+ <h2>My <span class="gold">Projects</span></h2>
+ <div class="grid">
+  <div class="card">
+   <h3>Employee Management System</h3>
+   <p>Employee management web application project.</p>
+   <br>
+   <a class="btn" href="https://vsakthivel2882005-collab.github.io/Employee-Management-System-/" target="_blank">Live Project ↗</a>
+  </div>
+ </div>
+</section>
+
+<section class="content" id="experience">
+ <h2>Education & <span class="gold">Experience</span></h2>
+ <div class="grid">
+  <div class="card">
+   <h3>B.E. Computer Science</h3>
+   <p>JKKN College of Engineering and Technology</p>
+   <p>2023 – 2027</p>
+  </div>
+  <div class="card">
+   <h3>Supervisor</h3>
+   <p>Future India Private Limited</p>
+   <p>Chennai / Chengalpattu</p>
+  </div>
+ </div>
+</section>
+
+<section class="content" id="contact">
+ <h2>Contact <span class="gold">Me</span></h2>
+ <div class="card">
+  <p>Email: vsakthi2882006@gmail.com</p>
+  <p>Phone: 9360411193</p>
+  <p>Instagram: @cdm_killer_sakthi_07</p>
+  <div class="buttons">
+   <a class="btn primary" href="mailto:vsakthi2882006@gmail.com">Email Me</a>
+   <a class="btn" href="https://wa.me/919360411193">WhatsApp</a>
+   <a class="btn" href="https://instagram.com/cdm_killer_sakthi_07">Instagram</a>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ © 2026 Sakthivel V. | Premium Developer Portfolio
+</footer>
+
+</body>
+  </html>
+  
